@@ -1,7 +1,7 @@
 - [Ambiente](#Ambiente)
 - [Introdução](#Introdução)
 - [Instalar o servidor PXE - Pre-Execution Environment](##Instalar_o_servidor_PXE_-_Pre-Execution_Environment)
--- [Configurar o TFTP](###Configurar_o_TFTP)
+- [Configurar o TFTP](###Configurar_o_TFTP)
 - [Configure o dhcp server](###Configure_o_dhcp_server)
 - [Baixando a ISO](###Baixando_a_ISO)
 - [Configurar o NFS](###Configurar_o_NFS)
@@ -19,6 +19,9 @@
 Vamos montar o servidor PXE usando algumas medidas de segurança, o servidor vai ter 2 interfaces de rede, uma interface para cada rede, uma das conexões vai ser para acesso na internet e a outra vai ser para comunicação com o os servidores da rede *pxe*. 
 
 Com isso, vamos habilitar o daemon do DHCP para escutar apenas na interface da rede do pxe assim como o daemon do tftp, ambos escutarão apenas na rede pxe.
+
+
+
 
 
 
