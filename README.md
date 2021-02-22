@@ -1,18 +1,18 @@
 - [Ambiente](#Ambiente)
 - [Introdução](#Introdução)
-- [Instalar o servidor PXE - Pre-Execution Environment](#Instalar o servidor PXE - Pre-Execution Environment)
-- [Configurar o TFTP](#Configurar o TFTP)
-- [Configure o dhcp server](#Configure o dhcp server)
-- [Baixando a ISO](#Baixando a ISO)
-- [Configurar o NFS](#Configurar o NFS)
-- [Configuração do PXE](#Configuração do PXE)
-- [Instalação personalizada](#Instalação personalizada)
-- [Instalar o servidor PXE - Pre-Execution Environment](#Instalar o servidor PXE)
-- [Configurar o TFTP](#Configurar o TFTP)
-- [Configure o dhcp server](#Configure o dhcp server)
-- [Baixando a ISO](#Baixando a ISO)
-- [Configurar o NFS](#Configurar o NFS)
-- [Configuração do PXE](#Configuração do PXE)
+- [Instalar o servidor PXE - Pre-Execution Environment](##Instalar_o_servidor_PXE_-_Pre-Execution_Environment)
+- [Configurar o TFTP](###Configurar_o_TFTP)
+- [Configure o dhcp server](###Configure_o_dhcp_server)
+- [Baixando a ISO](###Baixando_a_ISO)
+- [Configurar o NFS](###Configurar_o_NFS)
+- [Configuração do PXE](###Configuração_do_PXE)
+- [Instalação personalizada](##Instalação_personalizada)
+- [Instalar o servidor PXE - Pre-Execution Environment](###Instalar_o_servidor_PXE)
+- [Configurar o TFTP](###Configurar_o_TFTP)
+- [Configure o dhcp server](###Configure_o_dhcp_server)
+- [Baixando a ISO](###Baixando_a_ISO)
+- [Configurar o NFS](###Configurar_o_NFS)
+- [Configuração do PXE](###Configuração_do_PXE)
 
 # Ambiente
 
@@ -42,7 +42,7 @@ O que vai mudar é o método de configuração dependendo da aplicação escolhi
 
 
 
-## Instalar o servidor PXE - Pre-Execution Environment
+## Instalar_o_servidor_PXE_-_Pre-Execution_Environment
 
 Vamos começar instalando os pacotes necessários para o funcionamento do pxelinux:
 
@@ -60,7 +60,7 @@ sudo apt install isc-dhcp-server nfs-kernel-server tftpd-hpa pxelinux -y
 
 
 
-### Configurar o TFTP
+### Configurar_o_TFTP
 
 Agora vamos configurar o daemon do tftpd para que ele possa fornecer os arquivos durante o boot.
 
@@ -98,7 +98,7 @@ sudo systemctl status tftpd-hpa.service
 
  
 
-### Configure o dhcp server
+### Configure_o_dhcp_server
 
 Agora vamos configurar o servidor DHCP, para uma configuração básica do dhcp, podemos usar o exemplo que está no arquivo `/usr/share/doc/pxelinux/README.txt.gz` caso você tenha o pacote `pxelinux` instalado, nosso exemplo foi baseado nesse arquivo, mudando apenas algumas coisas.
 
@@ -156,7 +156,7 @@ sudo systemctl status isc-dhcp-server
 
  
 
-### Baixando a ISO
+### Baixando_a_ISO
 
 Agora vamos baixar a imagem do sistema que será instalada pela rede e vamos criar uma pasta onde vamos deixar os arquivos da ISO para que possam ser disponibilizados via NFS:
 
@@ -176,7 +176,7 @@ sudo find /mnt -maxdepth 1 -not -wholename "/mnt" -exec cp -Rv {} /distros/ubunt
 
 
 
-### Configurar o NFS
+### Configurar_o_NFS
 
 Agora vamos compartilhar a pasta onde está nossa imagem do Ubuntu para que ela seja disponibilizada durante o boot:
 
@@ -195,7 +195,7 @@ sudo exportfs -a
 
 
 
-### Configuração do PXE
+### Configuração_do_PXE
 
 Toda a configuração do pxe (arquivos e binários) é colocada dentro do tftp, para que assim o tftp possa fornecer os arquivos como pxelinux.0, initrd, vmlinuz entre outros.
 
@@ -237,13 +237,13 @@ sudo ln -sf pxe/pxelinux.0 /srv/tftp/pxe5254
 
 
 
-## Instalação personalizada
+## Instalação_personalizada
 
 Vamos instalar agora o pxe num modelo onde podemos configurar vários sistemas para boot, e quem escolhe qual sistema iniciar é quem está inicializando o sistema. Para evitar problemas vamos configurar do zero todos os passos, apenas alterando o que for necessário.
 
 
 
-### Instalar o servidor PXE
+### Instalar_o_servidor_PXE
 
 Vamos começar instalando os pacotes necessários para o funcionamento do pxelinux:
 
@@ -261,7 +261,7 @@ sudo apt install isc-dhcp-server nfs-kernel-server tftpd-hpa pxelinux -y
 
 
 
-### Configurar o TFTP
+### Configurar_TFTP
 
 Agora vamos configurar o daemon do tftpd para que ele possa fornecer os arquivos durante o boot.
 
@@ -299,7 +299,7 @@ sudo systemctl status tftpd-hpa.service
 
  
 
-### Configure o dhcp server
+### Configurando_DHCP_Server
 
 Agora vamos configurar o servidor DHCP, para uma configuração básica do dhcp, podemos usar o exemplo que está no arquivo `/usr/share/doc/pxelinux/README.txt.gz` caso você tenha o pacote `pxelinux` instalado, nosso exemplo foi baseado nesse arquivo, mudando apenas algumas coisas.
 
@@ -357,7 +357,7 @@ sudo systemctl status isc-dhcp-server
 
  
 
-### Baixando a ISO
+### Baixando_ISO
 
 Agora vamos baixar a imagem do sistema que será instalada pela rede e vamos criar uma pasta onde vamos deixar os arquivos da ISO para que possam ser disponibilizados via NFS:
 
@@ -410,7 +410,7 @@ sudo cp -v /mnt/casper/{vmlinuz,initrd} /srv/tftp/ubuntu21_desktop/
 
 
 
-### Configurar o NFS
+### Configurarando_NFS
 
 Agora vamos compartilhar a pasta onde está nossa imagem do Ubuntu para que ela seja disponibilizada durante o boot:
 
@@ -429,7 +429,7 @@ sudo exportfs -a
 
 
 
-### Configuração do PXE
+### Configurando_PXE
 
 Toda a configuração do pxe (arquivos e binários) é colocada dentro do tftp, para que assim o tftp possa fornecer os arquivos como pxelinux.0, initrd, vmlinuz entre outros.
 
