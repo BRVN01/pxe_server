@@ -1,7 +1,7 @@
 - [Ambiente](#Ambiente)
 - [Introdução](#Introdução)
 - [Instalar o servidor PXE - Pre-Execution Environment](##Instalar_o_servidor_PXE_-_Pre-Execution_Environment)
-- [Configurar o TFTP](###Configurar_o_TFTP)
+-- [Configurar o TFTP](###Configurar_o_TFTP)
 - [Configure o dhcp server](###Configure_o_dhcp_server)
 - [Baixando a ISO](###Baixando_a_ISO)
 - [Configurar o NFS](###Configurar_o_NFS)
